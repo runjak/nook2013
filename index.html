@@ -27,11 +27,93 @@
         <section>
           <h1>Raphaël.js</h1>
           <h3>Eine JavaScript Bibliothek für Vektorgrafiken</h3>
-          <p>
-            <small>Hier könnte ihr Unfug stehen.</small>
-          </p>
+          <p><small>Hier könnte ihr Unfug stehen.</small></p>
         </section>
-
+        <section>
+          <h3>Aufbau des Vortrags</h3>
+          <ol>
+            <li>Was sind Vektorgrafiken?</li>
+            <li class="fragment">Warum sollten wir das im Browser haben wollen?</li>
+            <li class="fragment">Wie sieht soetwas aus?</li>
+            <li class="fragment">Wie benutze ich das?</li>
+            <li class="fragment">Fliegende Einhörner.</li>
+          </ol>
+        </section>
+        <section>
+          <section>
+            <h3>Was sind Rastergrafiken?</h3>
+            <ul>
+              <li>Rastergrafiken sind aus einzelnen Bildpunkten zusammengesetzt.</li>
+              <li>Diese Bildpunkte sind in einem Raster angeordnet.</li>
+              <li>Dieses Verfahren entspicht der Darstellungsweise auf Bildschirmen.</li>
+              <li class="fragment">Wenn Rastergrafiken aber eine zu niedrige Auflösung besitzen…</li>
+              <li class="fragment">
+                …müssen sie skaliert werden.<br>
+                <img src="data/happy.bmp" style="width:  8px; border: 0px;">
+                <img src="data/happy.bmp" style="width: 16px; border: 0px;">
+                <img src="data/happy.bmp" style="width: 32px; border: 0px;">
+                <img src="data/happy.bmp" style="width: 64px; border: 0px;">
+                <img src="data/happy.bmp" style="width:128px; border: 0px;">
+                <img src="data/happy.bmp" style="width:256px; border: 0px;">
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Was sind Vektorgrafiken?</h3>
+            <ol>
+              <li>Statt aus einzelnen Bildpunkten sind Vektorgrafiken aus Primitiven zusammengesetzt.</li>
+              <li>Primitive haben eine Position im Bild.</li>
+              <li>Primitive können skaliert oder rotiert werden.</li>
+              <li>Bruderhut!</li>
+              <li>Entehülle!</li>
+            </ol>
+          </section>
+          <section>
+            <h3>Typische Primitive</h3>
+            <ul>
+              <li>Polygone</li>
+              <li>Kreise/Ellipsen</li>
+              <li>Linien, Pfade</li>
+              <li>Text</li>
+              <li>Rastergrafiken</li>
+              <li>Gruppen von Primitiven</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Wesentliche unterschiede zu Rastergrafiken:</h3>
+            <ul>
+              <li>Rastergrafiken sind leichter darzustellen.</li>
+              <li>Vektorgrafiken können sehr gut skaliert werden.</li>
+              <li>Vektorgrafiken zu erstellen ist für manche Anwendungsfälle einfacher.</li>
+              <li>Vektorgrafiken lassen sich mit einem einfachen Editor erstellen.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>Warum sollten wir das im Browser wollen?</h3>
+        </section>
+        <section>
+          <h3>Demos</h3>
+        </section>
+        <section>
+          <h3>Intro zu Raphaël.js</h3>
+        </section>
+        <section>
+          <h3>Ein Beispiel für Sets:</h3>
+          <code data-paper>
+for(var i = 0; i < 200; i += 10){
+  paper.circle(i, 20 + 0.5*i, 0.5*i)
+       .attr('fill', '#ff0000')
+       .attr('opacity','0.125');
+}
+          </code>
+          <code data-paper>
+paper.setStart();
+for(var i = 0; i < 200; i += 10)
+  paper.rect(i, 20 + 0.5*i, 0.5*i, 0.75*i);
+paper.setFinish().attr('fill', '#00ff00').attr('opacity', '0.125');
+          </code>
+        </section>
         <section>
           <section><h1>Fragen?</h1></section>
           <section><h3>…es war mir ein inneres Blumenessen :)</h3></section>
@@ -44,10 +126,10 @@
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true
-      , progress: true
-      , history:  true
-      , center:   true
+        controls:   true
+      , progress:   true
+      , history:    true
+      , center:     true
       , theme:      Reveal.getQueryHash().theme                   // available themes are in /css/theme
       , transition: Reveal.getQueryHash().transition || 'default' // default/cube/page/concave/zoom/linear/fade/none
         // Optional libraries used to extend on reveal.js
@@ -59,6 +141,8 @@
         , {src: 'plugin/zoom-js/zoom.js', async: true, condition: function(){return !!document.body.classList;}}
         , {src: 'plugin/notes/notes.js', async: true, condition: function(){return !!document.body.classList;}}
         , {src: 'js/raphael.js', async: true, condition: function(){return true;}}
+        , {src: 'js/jquery-2.0.3.min.js', async: true, condition: function(){return true;}}
+        , {src: 'js/main.js', async: true, condition: function(){return true;}}
         ]
       });
     </script>
