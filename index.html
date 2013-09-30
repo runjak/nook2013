@@ -91,11 +91,10 @@
             </ul>
           </section>
         </section>
-        <section><!-- FIXME Todo below -->
+        <section>
           <h3>Warum eine JavaScript Bibliothek dafür?</h3>
-          <ol>
-            <li></li>
-          </ol>
+          <!-- FIXME Todo below -->
+          WAS IST SVG?!
         </section>
         <section>
           <section>
@@ -132,26 +131,75 @@
           </section>
         </section>
         <section>
-          <h3>Intro zu Raphaël.js</h3>
-        </section>
-        <section>
-          <h3>Ein Beispiel für Sets:</h3>
-          <code data-paper>
+          <section>
+            <h3>Intro zu Raphaël.js</h3>
+            Wesentliche Klassen:<br>
+            <ul>
+              <li>Raphael - Erstellt Paper, stellt Hilfsfunktionen bereit</li>
+              <li class="fragment">Paper - Hierauf wird gezeichnet</li>
+              <li class="fragment">Element - Befinden sich auf dem Paper</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Ein Paper wird geboren</h3>
+            <pre class="language-javascript"><code data-trim contenteditable>
+//Ein Paper, 320x200px groß.
+var paper = Raphael(10, 50, 320, 200);
+//Ein Paper, dass in einem Element mit der Id 'notepad' erzeugt wird:
+var paper = Raphael(document.getElementById("notepad"), 320, 200);
+var paper = Raphael("notepad", 320, 200);
+//Das Paper für die folgenden Beispiele:
+var w = $(window).width()
+  , h = $(window).height()
+  , paper = Raphael(10, 10, w-20, h-20);
+              </code></pre>
+          </section>
+          <section>
+            <h3>Kreise:</h3>
+            <code data-paper>
+var circle = paper.circle(100,100,50);
+circle.attr('fill', '#ff0000');
+// Verketten von Methodenaufrufen:
+/*paper.circle(120,120,50).attr('fill', '#0000ff').attr('opacity','0.5');*/
+            </code>
+          </section>
+          <section>
+            <h3>Rechtecke:</h3>
+            <code data-paper>
+// Ein Rechteck:
+paper.rect(200, 100, 75, 75).attr('fill', 'red');
+// Ein Rechteck mit runden Ecken:
+paper.rect(100, 200, 75, 75, 10).attr('fill', 'green');
+// Kein Rechteck, und attr mit mehreren Werten:
+paper.ellipse(500, 400, 100, 50).attr({fill: 'white', opacity: '0.5'});
+            </code>
+          </section>
+          <section>
+            <h3>Ein Beispiel für Sets:</h3>
+            <code data-paper>
+// Dies kann unpraktisch sein
+paper.rect(200, 200, 100, 100, 10)
+     .attr({fill: '#ff0000', opacity: '0.125'});
 for(var i = 0; i < 200; i += 10){
   paper.circle(i, 20 + 0.5*i, 0.5*i)
-       .attr('fill', '#ff0000')
-       .attr('opacity','0.125');
+       .attr({fill: '#ff0000', opacity: '0.125'});
 }
-          </code>
-          <code data-paper>
+            </code>
+            <code data-paper>
+// Dies hilft dabei…
 paper.setStart();
+paper.circle(200, 200, 100);
 for(var i = 0; i < 200; i += 10)
   paper.rect(i, 20 + 0.5*i, 0.5*i, 0.75*i);
-paper.setFinish().attr('fill', '#00ff00').attr('opacity', '0.125');
-          </code>
+paper.setFinish().attr({fill: '#00ff00', opacity: 0.125});
+            </code>
+          </section>
+<!--      FIXME FIXME FLIEGENDE EINHÖRNER!! -->
         </section>
         <section>
           <section><h1>Fragen?</h1></section>
+          FIXME
+          WAS HAB ICH BENUTZT?!
           <section><h3>…es war mir ein inneres Blumenessen :)</h3></section>
         </section>
       </div>
