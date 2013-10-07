@@ -175,7 +175,58 @@ paper.ellipse(500, 400, 100, 50).attr({fill: 'white', opacity: '0.5'});
             </code>
           </section>
           <section>
-            <h3>Ein Beispiel für Sets:</h3>
+            <h3>Text:</h3>
+            <code data-paper>
+paper.text(100, 50, 'foo')
+     .attr({'font-size': 20, 'text-anchor': 'start'});
+paper.text(100, 70, 'bar')
+     .attr({'font-size': 30, 'text-anchor': 'middle', fill: '#00ff00'});
+paper.text(100, 100, 'baz')
+     .attr({'font-size': 40, 'text-anchor': 'end', stroke: '#ff0000'});
+/*Default text-anchor ist middle*/
+            </code>
+          </section>
+          <section>
+            <h3>Bilder:</h3>
+            <!-- FIXME check for well LICENSED images -->
+            <code data-paper>
+              paper.image('http://www.cornify.com/getacorn.php',100,100,100,100);
+            </code>
+          </section>
+          <section>
+            <h3>Pfade:</h3>
+            <!-- FIXME CLARIFY THIS AND ALSO SHOW HOW FILL MAKES FOR POLYGONS -->
+            <code data-paper>
+var ps = [
+  'M50,50L100,100Z'
+, 'M50,50H100Z'
+, 'M50,50V100Z'
+];
+paper.path(ps[i])
+     .attr({ stroke: Raphael.getColor()
+           , 'stroke-width': 2.5});
+Raphael.getColor.reset();
+            </code>
+          </section>
+          <section>
+            <h3>Format:</h3>
+            <code data-paper>
+paper.path(Raphael.format('M{0},{1}V{2}H{2}V{3}Z',50,50,100,50))
+     .attr({ stroke: Raphael.getColor(), 'stroke-width': 2.5});
+            </code>
+          </section>
+          <section>
+            <h3>Fullfill:</h3>
+            <code data-paper>
+var stuff = { x: 50, y: 50
+            , w: 200, h: 300};
+paper.path(Raphael.fullfill('M{x},{y}H{w},V{h}Z', stuff))
+     .attr({ stroke: Raphael.getColor()
+           , 'stroke-width': 2.5});
+            </code>
+          </section>
+          <section>
+            <h3>Sets:</h3>
             <code data-paper>
 // Dies kann unpraktisch sein
 paper.rect(200, 200, 100, 100, 10)
@@ -192,6 +243,26 @@ paper.circle(200, 200, 100);
 for(var i = 0; i < 200; i += 10)
   paper.rect(i, 20 + 0.5*i, 0.5*i, 0.75*i);
 paper.setFinish().attr({fill: '#00ff00', opacity: 0.125});
+            </code>
+          </section>
+          <section>
+            <h3>Transformationen:</h3>
+            <code data-paper>
+// Verschieben:
+paper.rect(100,100,50,50).attr('fill', 'red');
+paper.rect(100,100,50,50).attr('fill', 'red').transform('t50,100');
+            </code>
+            <code data-paper>
+// Rotieren:
+for(var i = 0; i <= 90; i+=15)
+  paper.rect(100,100,50,50).transform('r'+i+',100,100')
+       .attr({fill: 'red', opacity: 0.25});
+            </code>
+            <code data-paper>
+// Skalieren:
+for(var i = 0; i <= 4; i+=0.4)
+  paper.rect(25,100,50,50).transform('s1,'+i+',125,125t'+20*i+',0')
+       .attr({fill: 'red', opacity: 0.25});
             </code>
           </section>
 <!--      FIXME FIXME FLIEGENDE EINHÖRNER!! -->
