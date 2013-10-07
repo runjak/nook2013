@@ -21,4 +21,8 @@ $(function(){
     paper.clear();
     window.callback(paper);
   });
+  //Cleaning the paper on slide change:
+  Reveal.addEventListener('slidechanged', function(){
+    paper.clear();
+  });
 });

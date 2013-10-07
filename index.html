@@ -195,16 +195,16 @@ paper.text(100, 100, 'baz')
           </section>
           <section>
             <h3>Pfade:</h3>
-            <!-- FIXME CLARIFY THIS AND ALSO SHOW HOW FILL MAKES FOR POLYGONS -->
             <code data-paper>
 var ps = [
-  'M50,50L100,100Z'
-, 'M50,50H100Z'
-, 'M50,50V100Z'
+  'M50,50L100,100'
+, 'M50,50H100'
+, 'M50,50V100'
 ];
-paper.path(ps[i])
-     .attr({ stroke: Raphael.getColor()
-           , 'stroke-width': 2.5});
+for(var i = 0; i < ps.length; i++)
+  paper.path(ps[i])
+       .attr({ stroke: Raphael.getColor()
+             , 'stroke-width': 2.5});
 Raphael.getColor.reset();
             </code>
           </section>
