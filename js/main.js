@@ -36,9 +36,8 @@ $(function(){
     }
   });
   //Unicorn magic!
-  var unicorn = {timeout: null, set: null};
-//Reveal.addEventListener('done', function(){
-    unicorn.timeout = window.setTimeout(function(){
+  Reveal.addEventListener('done', function(){
+    window.setTimeout(function(){
       /*
         Unicorn built using inkscape after the preimage
         from http://www.geekytattoos.com/does-she-dream-of-electric-sheep-too/
@@ -53,12 +52,15 @@ $(function(){
                 + 'M16,13L20,14L14,19'
                 + 'M8,19L9,16.5'
                 + 'M16.25,17.25L13.75,15'
-                + 'M22.5,11L18.75,10';
-      unicorn.set = paper.path(uPath, 50, 50)
-           .attr({stroke: Raphael.getColor(), 'stroke-width': 2.5})
-           .transform('t200,200,s1,-1s8');
-      console.log('UNICORN!!!');
-    }, 1000);
-//});
-  window.unicorn = unicorn;
+                + 'M22.5,11L18.75,10'
+        , unicorn = paper.path(uPath, 50, 50)
+                     .attr({stroke: Raphael.getColor(), 'stroke-width': 2.5})
+                     .transform('s8,-8');
+      var bbox = unicorn.getBBox();
+      unicorn.transform(Raphael.format('t{0},{1}s8,-8', w-bbox.width, h-bbox.height));
+      window.setInterval(function(){
+        unicorn.attr('stroke', Raphael.getColor());
+      },500);
+    },  200);
+  });
 });

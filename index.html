@@ -27,23 +27,25 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Raphaël.js</h1>
-          <h3>Eine JavaScript Bibliothek für Vektorgrafiken</h3>
-          <small>
-            <a href="https://github.com/runjak/nook2013">https://github.com/runjak/nook2013</a>
-            <br> Jakob
-            <a href="https://twitter.com/sicarius">@sicarius</a>
-          </small>
-        </section>
-        <section>
-          <h3>Aufbau des Vortrags</h3>
-          <ol>
-            <li>Was sind Raster-/Vektorgrafiken?</li>
-            <li class="fragment">Scalable Vector Graphics (SVG)</li>
-            <li class="fragment">Beispiele mit Raphaël.js</li>
-            <li class="fragment">Intro zu Raphaël.js</li>
-            <li class="fragment">Fragen</li>
-          </ol>
+          <section>
+            <h1>Raphaël.js</h1>
+            <h3>Eine JavaScript Bibliothek für Vektorgrafiken</h3>
+            <small>
+              <a href="https://github.com/runjak/nook2013">https://github.com/runjak/nook2013</a>
+              <br> Jakob
+              <a href="https://twitter.com/sicarius">@sicarius</a>
+            </small>
+          </section>
+          <section>
+            <h3>Aufbau des Vortrags</h3>
+            <ol>
+              <li>Was sind Raster-/Vektorgrafiken?</li>
+              <li class="fragment">Scalable Vector Graphics (SVG)</li>
+              <li class="fragment">Beispiele mit Raphaël.js</li>
+              <li class="fragment">Intro zu Raphaël.js</li>
+              <li class="fragment">Fragen</li>
+            </ol>
+          </section>
         </section>
         <section>
           <section>
@@ -106,7 +108,7 @@
               </code></pre>
             </li>
             <li class="fragment">
-              Der Browser macht daraus soetwas:
+              Der Browser macht daraus soetwas…
               <p style="position: fixed; left: 50px; top: 50px; height: 105px; width: 305px;">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                   <rect width="300" height="100"
@@ -147,6 +149,9 @@
           </section>
         </section>
         <section>
+          <section>
+            <h3>Intro zu Raphaël.js</h3>
+          </section>
           <section>
             <h3>Intro zu Raphaël.js</h3>
             Wesentliche Klassen:<br>
@@ -204,9 +209,8 @@ paper.text(100, 100, 'baz')
           </section>
           <section>
             <h3>Bilder:</h3>
-            <!-- FIXME check for well LICENSED images -->
             <code data-paper>
-              paper.image('http://www.cornify.com/getacorn.php',100,100,100,100);
+              paper.image('data/pea.jpg',25,25,500,500);
             </code>
           </section>
           <section>
@@ -284,7 +288,6 @@ for(var i = 0; i <= 4; i+=0.4)
           </section>
         </section>
         <section data-state="done">
-<!--      FIXME FIXME FLIEGENDE EINHÖRNER!! -->
           <h1>Fragen?</h1>
           <small class="fragment" data-state="happy">
             …es war mir ein inneres Blumenessen :)
