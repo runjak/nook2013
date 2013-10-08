@@ -29,16 +29,20 @@
         <section>
           <h1>Raphaël.js</h1>
           <h3>Eine JavaScript Bibliothek für Vektorgrafiken</h3>
-          <p><small>Hier könnte ihr Unfug stehen.</small></p>
+          <small>
+            <a href="https://github.com/runjak/nook2013">https://github.com/runjak/nook2013</a>
+            <br> Jakob
+            <a href="https://twitter.com/sicarius">@sicarius</a>
+          </small>
         </section>
         <section>
           <h3>Aufbau des Vortrags</h3>
           <ol>
             <li>Was sind Raster-/Vektorgrafiken?</li>
-            <li class="fragment">Warum eine JavaScript Bibliothek dafür?</li>
-            <li class="fragment">Beispiele</li>
+            <li class="fragment">Scalable Vector Graphics (SVG)</li>
+            <li class="fragment">Beispiele mit Raphaël.js</li>
             <li class="fragment">Intro zu Raphaël.js</li>
-            <li class="fragment">Fliegende Einhörner.</li>
+            <li class="fragment">Fragen</li>
           </ol>
         </section>
         <section>
@@ -48,9 +52,8 @@
               <li>Rastergrafiken sind aus einzelnen Bildpunkten zusammengesetzt.</li>
               <li>Diese Bildpunkte sind in einem Raster angeordnet.</li>
               <li>Dieses Verfahren entspicht der Darstellungsweise auf Bildschirmen.</li>
-              <li class="fragment">Wenn Rastergrafiken aber eine zu niedrige Auflösung besitzen…</li>
               <li class="fragment">
-                …müssen sie skaliert werden.<br>
+                Ein typisches Problem mit Rastergrafiken ist das skalieren:<br>
                 <img src="data/happy.bmp" style="width:  8px; border: 0px;">
                 <img src="data/happy.bmp" style="width: 16px; border: 0px;">
                 <img src="data/happy.bmp" style="width: 32px; border: 0px;">
@@ -62,13 +65,11 @@
           </section>
           <section>
             <h3>Was sind Vektorgrafiken?</h3>
-            <ol>
+            <ul>
               <li>Statt aus einzelnen Bildpunkten sind Vektorgrafiken aus Primitiven zusammengesetzt.</li>
               <li>Primitive haben eine Position im Bild.</li>
               <li>Primitive können skaliert oder rotiert werden.</li>
-              <li>Bruderhut!</li>
-              <li>Entehülle!</li>
-            </ol>
+            </ul>
           </section>
           <section>
             <h3>Typische Primitive</h3>
@@ -92,41 +93,56 @@
           </section>
         </section>
         <section>
-          <h3>Warum eine JavaScript Bibliothek dafür?</h3>
-          <!-- FIXME Todo below -->
-          WAS IST SVG?!
+          <h3>Scalable Vector Graphics (SVG):</h3>
+          <ul>
+            <li>Viele Browser können SVG darstellen.</li>
+            <li class="fragment">
+              SVG ist ein XML format, und sieht z.B. so aus:
+              <pre class="language-svg"><code data-trim contenteditable>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <rect width="300" height="100"
+    style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0)"/>
+</svg>
+              </code></pre>
+            </li>
+            <li class="fragment">
+              Der Browser macht daraus soetwas:
+              <p style="position: fixed; left: 50px; top: 50px; height: 105px; width: 305px;">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                  <rect width="300" height="100"
+                    style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0)"/>
+                </svg>
+              </p>
+            </li>
+            <li class="fragment">
+              Es bietet sich an, SVG im Browser zu manipulieren.
+            </li>
+          </ul>
         </section>
         <section>
           <section>
             <h3>Beispiele</h3>
-            <!-- Einbetten oder Links?! -->
+            …um zu sehen, was mit Raphaël.js so gebaut werden kann.
           </section>
-          <section data-state="wide">
-            <iframe scrolling="no" src="data/demos/Rapha%C3%ABl%20%C2%B7%20Analytics.html"></iframe>
+          <section data-state="wide" data-iframe="data/demos/Rapha%C3%ABl%20%C2%B7%20Analytics.html">
             <a href="http://raphaeljs.com/analytics.html">http://raphaeljs.com/analytics.html</a>
           </section>
-          <section data-state="wide">
-            <iframe scrolling="no" src="data/demos/Rapha%C3%ABl%20%C2%B7%20Animated%20Chart.html"></iframe>
+          <section data-state="wide" data-iframe="data/demos/Rapha%C3%ABl%20%C2%B7%20Animated%20Chart.html">
             <a href="http://raphaeljs.com/chart.html">http://raphaeljs.com/chart.html</a>
           </section>
-          <section data-state="wide">
-            <iframe scrolling="no" src="data/demos/Rapha%C3%ABl%20%C2%B7%20Polar%20Clock.html"></iframe>
+          <section data-state="wide" data-iframe="data/demos/Rapha%C3%ABl%20%C2%B7%20Polar%20Clock.html">
             <a href="http://raphaeljs.com/polar-clock.html">http://raphaeljs.com/polar-clock.html</a>
           </section>
-          <section data-state="wide">
-            <iframe scrolling="no" src="data/demos/Rapha%C3%ABl%20%C2%B7%20Pie%20Chart.html"></iframe>
+          <section data-state="wide" data-iframe="data/demos/Rapha%C3%ABl%20%C2%B7%20Pie%20Chart.html">
             <a href="http://raphaeljs.com/pie.html">http://raphaeljs.com/pie.html</a>
           </section>
-          <section data-state="wide">
-            <iframe scrolling="no" src="data/demos/Rapha%C3%ABl%20%C2%B7%20Graffle.html"></iframe>
+          <section data-state="wide" data-iframe="data/demos/Rapha%C3%ABl%20%C2%B7%20Graffle.html">
             <a href="http://raphaeljs.com/graffle.html">http://raphaeljs.com/graffle.html</a>
           </section>
-          <section data-state="wide">
-            <iframe scrolling="no" src="data/demos/Rapha%C3%ABl%20%C2%B7%20Roundabout.html"></iframe>
+          <section data-state="wide" data-iframe="data/demos/Rapha%C3%ABl%20%C2%B7%20Roundabout.html">
             <a href="http://raphaeljs.com/hand.html">http://raphaeljs.com/hand.html</a>
           </section>
-          <section data-state="wide">
-            <iframe scrolling="no" src="data/demos/Rapha%C3%ABl%20%C2%B7%20Gear.html"></iframe>
+          <section data-state="wide" data-iframe="data/demos/Rapha%C3%ABl%20%C2%B7%20Gear.html">
             <a href="http://raphaeljs.com/gear.html">http://raphaeljs.com/gear.html</a>
           </section>
         </section>
@@ -198,11 +214,12 @@ paper.text(100, 100, 'baz')
             <code data-paper>
 var ps = [
   'M50,50L100,100'
-, 'M50,50H100'
-, 'M50,50V100'
+//, 'M50,50H100'
+//, 'M50,50V100'
+//, 'M100,20,H200,V40,H100,Z'
 ];
 for(var i = 0; i < ps.length; i++)
-  paper.path(ps[i])
+  paper.path(ps[i]) // Was ist getColor?
        .attr({ stroke: Raphael.getColor()
              , 'stroke-width': 2.5});
 Raphael.getColor.reset();
@@ -265,13 +282,13 @@ for(var i = 0; i <= 4; i+=0.4)
        .attr({fill: 'red', opacity: 0.25});
             </code>
           </section>
-<!--      FIXME FIXME FLIEGENDE EINHÖRNER!! -->
         </section>
-        <section>
-          <section><h1>Fragen?</h1></section>
-          FIXME
-          WAS HAB ICH BENUTZT?!
-          <section><h3>…es war mir ein inneres Blumenessen :)</h3></section>
+        <section data-state="done">
+<!--      FIXME FIXME FLIEGENDE EINHÖRNER!! -->
+          <h1>Fragen?</h1>
+          <small class="fragment" data-state="happy">
+            …es war mir ein inneres Blumenessen :)
+          </small>
         </section>
       </div>
     </div>
