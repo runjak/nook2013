@@ -286,6 +286,34 @@ for(var i = 0; i <= 4; i+=0.4)
        .attr({fill: 'red', opacity: 0.25});
             </code>
           </section>
+          <section>
+            <h3>Click events:</h3>
+            <code data-paper>
+var rect = paper.rect(25,100,50,50).attr({fill: Raphael.getColor()});
+rect.click(function(){
+  rect.attr({fill: Raphael.getColor()});
+});
+            </code>
+          </section>
+          <section>
+            <h3>Drag&Drop:</h3>
+            <code data-paper>
+var c = paper.circle(50,50,25).attr({fill: Raphael.getColor()});
+var bbox = c.getBBox(); // BBox von c
+var chColor = function(){ // Kleine Hilfsfunktion
+  bbox = this.getBBox();
+  this.attr({fill: Raphael.getColor()});
+};
+c.drag(
+  function(dx, dy){ // Updates beim ziehen
+    c.attr({cx: bbox.x + dx, cy: bbox.y + dy});
+  }
+, chColor // Anfang zu ziehen
+, chColor // Ziehen zuende
+, c,c,c // Kontext für Funktionen
+);
+            </code>
+          </section>
         </section>
         <section data-state="done">
           <h1>Fragen?</h1>
