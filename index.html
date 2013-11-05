@@ -243,7 +243,9 @@ var stuff = { x: 50, y: 50
             , w: 200, h: 300};
 paper.path(Raphael.fullfill('M{x},{y}H{w},V{h}Z', stuff))
      .attr({ stroke: Raphael.getColor()
-           , 'stroke-width': 2.5});
+           , 'stroke-width': 2.5})
+     // Es leuchtet!
+     .glow({color: Raphael.getColor()});
             </code>
           </section>
           <section>
